@@ -6,29 +6,42 @@
   object name, diet, weight, length, period
 */
 
-// tyrannosaurus, carnivorous, 7000kg, 12m, Late Cretaceous
+function Dinosaur(name, diet, weight, length, period) {
+  this.name = name;
+  this.diet = diet;
+  this.weight = weight;
+  this.length = length;
+  this.period = period;
+} 
 
-// stegosaurus, herbivorous, 2000kg, 9m, Late Jurassic
+Dinosaur.prototype.roar = function() {
+  return "RAWERSRARARWERSARARARRRR!";
+}
 
-// velociraptor, carnivorous, 15kg, 1.8m, Late Cretaceous
+const dino1 = new Dinosaur('tyrannosaurus', 'carnivorous', '7000kg', '12m', 'Late Cretaceous', this.roar);
+
+const dino2 = new Dinosaur('stegosaurus', 'herbivorous', '2000kg', '9m', 'Late Jurassic');
+
+const dino3 = new Dinosaur('velociraptor', 'carnivorous', '15kg', '1.8m', 'Late Cretaceous');
 
 // Using your dinosaur objects, log answers to these questions:
 
 // How much did tyrannosaurus weigh?
-console.log();
+console.log(dino1.weight);
 
 // What was the diet of a velociraptor?
-console.log();
+console.log(dino3.diet);
 
 // How long was a stegosaurus?
-console.log();
+console.log(dino2.length);
 
 // What time period did tyrannosaurus live in?
-console.log();
+console.log(dino1.period);
 
 
 // Create a new roar method for the tyrannosaurus.  When called, return "RAWERSRARARWERSARARARRRR!" Log the result.
-console.log();
+
+console.log(dino1.roar);
 
 
 // ==== Arrays ====
@@ -47,9 +60,17 @@ const graduates = [{"id":1,"first_name":"Cynde","university":"Missouri Southern 
 {"id":10,"first_name":"Hube","university":"Universitat Rovira I Virgili Tarragona","email":"hlethbrig9@foxnews.com"}]
 
 /* Request 1: Create a new array called universities that contains all the universities in the graduates array.  
-
 Once you have the new array created, sort the universities alphabetically and log the result. */
-const universities = [];
+
+// const elems = document.querySelectorAll('select option:checked');
+// const values = Array.prototype.map.call(elems, function(obj) {
+//   return obj.value;
+// });
+
+const universities = graduates.map(function(university) {
+  return graduates.university;
+});[graduates.university]
+
 console.log(universities)
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
